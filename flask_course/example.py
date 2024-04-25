@@ -37,3 +37,13 @@ def hello_world():
 @app.route('/home/')
 def hello_home():
     return 'Welcome to Home!'
+
+
+@app.get('/users')
+def users_get():
+    return 'GET /users'
+
+
+@app.post('/users')
+def users_post():
+    return 'POST /users'
