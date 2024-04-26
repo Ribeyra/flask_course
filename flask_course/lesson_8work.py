@@ -37,9 +37,9 @@ def index():
     return 'open something like (you can change id): /companies/5'
 
 
-@app.route('/companies/<id>')
+@app.route('/companies/<int:id>')
 def companies_page(id):
-    res = list(filter(lambda x: x.get('id') == int(id), companies))
+    res = list(filter(lambda x: x.get('id') == id, companies))
     if res:
         return jsonify(res[0])
     return 'Page not found', 404
