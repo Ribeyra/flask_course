@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Example application</title>
+  </head>
+  <body>
+    <a href="/users">Пользователи</a>
+    <!-- BEGIN (write your solution here) -->
+    <table>
+        <tr>
+            <td>
+              ID:
+            </td>
+            <td>
+                {{ user.id }}
+            </td>
+        </tr>
+        <tr>
+            <td>
+              First name:
+            </td>
+            <td>
+                {{ user.first_name }}
+            </td>
+        </tr>
+        <tr>
+            <td>
+              Last name:
+            </td>
+            <td>
+                {{ user.last_name }}
+            </td>
+        </tr>
+        <tr>
+            <td>
+              email:
+            </td>
+            <td>
+                {{ user.email }}
+            </td>
+        </tr>
+    </table>
+    <!-- END -->
+  </body>
+</html>
