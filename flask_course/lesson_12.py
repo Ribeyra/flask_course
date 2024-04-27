@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 import random
 
@@ -39,29 +39,19 @@ def index():
 
 
 # BEGIN (write your solution here)
-""" @app.route('/users')
-def users_page():
-    return render_template(
-        'users/user_list.html',
-        users=users
-    ) """
-
-
 @app.route('/users')
 def users_page():
+    term = request.args.get('term', '')
+    if not term:
+        show_user = users
+    else:
+        show_user = [
+            user for user in users
+            if (user['first_name'].lower()).startswith(term.lower())
+        ]
     return render_template(
-        'users/index.html',
-        users=users
+        'users/index2.html',
+        users=show_user,
+        search=term
     )
-
-
-@app.route('/users/<int:id>')
-def user_page(id):
-    user = next(filter(lambda x: x.get('id') == id, users), None)
-    if user:
-        return render_template(
-            'users/show_user.html',
-            user=user
-        )
-    return 'Page not found', 404
 # END
