@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block title %}Пользователи{% endblock %}
+
+{% block sidebar %}{% endblock %}
+
+{% block content %}
+<table><thead>
+  <tr>
+    <th>ID</th>
+    <th>Nickname</th>
+    <th>email</th>
+  </tr>
+</thead>
+  <tbody>
+    {% for user in users %}
+    <tr>
+      <td>
+        {{ user.id }}
+      </td>
+      <td>
+        {{ user.nickname }}
+      </td>
+      <td>
+        {{ user.email }}
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

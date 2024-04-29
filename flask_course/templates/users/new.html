@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block title %}Пользователи{% endblock %}
+
+{% block sidebar %}{% endblock %}
+
+{% block content %}
+<form action="/users" method="post">
+    <div>
+      <label>
+        nickname
+        <input type="text" name="nickname" value="{{ user.nickname }}">
+      </label>
+      {% if errors['nickname'] %}
+        <div>{{ errors['nickname'] }}</div>
+      {% endif %}
+    </div>
+    <div>
+      <label>
+        Email
+        <input type="email" required name="email" value="{{ user.email }}">
+      </label>
+      {% if errors['email'] %}
+        <div>{{ errors['email'] }}</div>
+      {% endif %}
+    </div>
+    <input type="submit" value="Sign Up">
+  </form>
+{% endblock %}
