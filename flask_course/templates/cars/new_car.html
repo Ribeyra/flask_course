@@ -1,0 +1,36 @@
+{% extends "cars/layout2.html" %}
+
+{% block title %}Cars{% endblock %}
+
+{% block content %}
+<form action="/cars" method="post">
+    <div>
+      <label>
+        Название
+        <input type="text" name="name" value="{{ car.name }}">
+      </label>
+    </div>
+    {% if errors['name'] %}
+      <div>{{ errors['name'] }}</div>
+    {% endif %}
+    <div>
+      <label>
+        Город
+        <input type="text" name="city" value="{{ car.city }}">
+      </label>
+    </div>
+    {% if errors['city'] %}
+      <div>{{ errors['city'] }}</div>
+    {% endif %}
+    <div>
+      <label>
+        Флагманская модель
+        <input type="text" name="flagman" value="{{ car.flagman }}">
+      </label>
+    </div>
+    {% if errors['flagman'] %}
+      <div>{{ errors['flagman'] }}</div>
+    {% endif %}
+    <input type="submit" value="Confirm">
+</form>
+{% endblock %}

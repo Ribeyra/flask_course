@@ -3,10 +3,17 @@
 {% block title %}Cars{% endblock %}
 
 {% block content %}
+{% if messages %}
+  <ul class=flashes style="list-style-type: none;">
+  {% for category, message in messages %}
+    <li class="{{ category }}">{{ message }}</li>
+  {% endfor %}
+  </ul>
+{% endif %}
 <ul>
     {% for car in cars %}
     <li>
-        <a href="{{ url_for( 'car', id=car.id ) }}"> {{ car.name }} </a>
+        <a href="{{ url_for( 'car', id_=car.id ) }}"> {{ car.name }} </a>
     </li>
     {% endfor %}
 </ul>

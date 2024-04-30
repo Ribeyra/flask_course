@@ -4,8 +4,8 @@
 
 {% block content %}
 <ul>
-    {% for value in car %}
-    <li> {{ value[0] }}: {{ value[1] }} </li>
+    {% for key, value in car if key != 'id' %}
+    <li> {{ key }}: {{ value }} </li>
     {% endfor %}
 </ul>
 {% endblock %}
