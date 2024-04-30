@@ -1,0 +1,11 @@
+{% extends "cars/layout2.html" %}
+
+{% block title %}Cars{% endblock %}
+
+{% block content %}
+<ul>
+    {% for value in car %}
+    <li> {{ value[0] }}: {{ value[1] }} </li>
+    {% endfor %}
+</ul>
+{% endblock %}
