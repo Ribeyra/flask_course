@@ -1,0 +1,36 @@
+{% extends "library/layout2.html" %}
+
+{% block title %}New Book{% endblock %}
+
+{% block content %}
+<form action="/books" method="post">
+    <div>
+      <label>
+        Название
+        <input type="text" name="title" value="{{ book.title }}">
+      </label>
+    </div>
+    {% if errors['title'] %}
+      <div>{{ errors['title'] }}</div>
+    {% endif %}
+    <div>
+      <label>
+        Автор
+        <input type="text" name="author" value="{{ book.author }}">
+      </label>
+    </div>
+    {% if errors['author'] %}
+      <div>{{ errors['author'] }}</div>
+    {% endif %}
+    <div>
+      <label>
+        Жанр
+        <input type="text" name="genre" value="{{ book.genre }}">
+      </label>
+    </div>
+    {% if errors['genre'] %}
+      <div>{{ errors['genre'] }}</div>
+    {% endif %}
+    <input type="submit" value="Confirm">
+</form>
+{% endblock %}

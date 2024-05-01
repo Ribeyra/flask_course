@@ -1,0 +1,24 @@
+{% extends "library/layout2.html" %}
+
+{% block title %}Book{% endblock %}
+
+{% block content %}
+<ul>
+    {% for key, value in book %}
+    <li> 
+        {% if key == 'title' %}
+        <span>Название:</span>
+        {% endif %}
+        {% if key == 'author' %}
+        <span>Автор:</span>
+        {% endif %}
+        {% if key == 'genre' %}
+        <span>Жанр:</span>
+        {% endif %}
+        {% if key == 'id' %}
+        <span>артикул:</span>
+        {% endif %}
+    {{ value }} </li>
+    {% endfor %}
+</ul>
+{% endblock %}
