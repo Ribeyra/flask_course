@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Example application</title>
+  </head>
+  <body>
+<!-- BEGIN (write your solution here) -->
+    <ul>
+        {% for post in posts %}
+        <li>
+            <a href="{{ url_for( 'show_post', slug=post.slug ) }}">{{ post.title }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+    
+    <div class="button-row">
+        {% if page > 1 %}
+        <form action="/posts" method="get" style="display: inline;">
+            <input type="hidden" name="page" value="{{ page - 1 }}">
+            <input type="submit" value="prev_page" />
+        </form>
+        {% endif %}
+        {% if posts %}
+        <form action="/posts" method="get" style="display: inline;">
+            <input type="hidden" name="page" value="{{ page + 1 }}">
+            <input type="submit" value="next_page" />
+        </form>
+        {% endif %}
+    </div>
+<!-- END -->
+  </body>
+</html>

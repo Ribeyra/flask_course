@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Example application</title>
+  </head>
+  <body>
+<!-- BEGIN (write your solution here) -->
+    <ul>
+        {% for post in posts %}
+        <li>
+            <a href="{{ url_for( 'show_post', slug=post.slug ) }}">{{ post.title }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+    
+    <div>
+        {% if page > 1 %}
+        <a href="{{ url_for( 'posts' ) }}?page={{ page - 1 }}">Назад</a>
+        {% endif %}
+        {% if posts %}
+        <a href="{{ url_for( 'posts' ) }}?page={{ page + 1 }}">Вперед</a>
+        {% endif %}
+    </div>
+<!-- END -->
+  </body>
+</html>
