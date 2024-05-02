@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Example application</title>
+  </head>
+  <body>
+    <a href="/posts/new">Create post</a>
+
+    {% if messages %}
+    <ul>
+      {% for category, message in messages %}
+      <li class="{{ category }}">{{ message }}</li>
+    {% endfor %}
+    </ul>
+    {% endif %}
+
+    <ul>    
+    {% for post in posts %}
+      <li>
+        {{ post.title }}
+      </li>
+    {% endfor %}
+    </ul>
+</body>
+</html>
