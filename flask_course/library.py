@@ -71,7 +71,7 @@ def books_post():
             errors=errors
         ), 422
 
-    id = len(books) + 1
+    id = str(len(books) + 1)
     new_book['id'] = id
     books[f'{id}'] = new_book
     write_db(books)
@@ -100,5 +100,42 @@ def book(id):
     books = read_db()
     return render_template(
         'library/show.html',
-        book=books[id].items()
+        book=books[id]
     )
+
+
+@app.get('/books/<id>/edit')
+def edit(id):
+    books = read_db()
+    book = books.get(id)
+    errors = []
+
+    return render_template(
+           'library/edit.html',
+           book=book,
+           errors=errors,
+    )
+
+
+@app.route('/books/<id>/patch', methods=['POST'])
+def patch_book(id):
+    books = read_db()
+    book = books.get(id)
+    data = request.form.to_dict()
+
+    errors = validate(data)
+    if errors:
+        return render_template(
+            'library/edit.html',
+            book=data,
+            errors=errors
+        ), 422
+
+    for key in book:
+        if key in data:
+            book[key] = data[key]
+    books[id] = book
+    write_db(books)
+
+    flash('Описание книги изменено успешно', 'success')
+    return redirect('/books', code=302)

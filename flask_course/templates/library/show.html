@@ -3,22 +3,42 @@
 {% block title %}Book{% endblock %}
 
 {% block content %}
-<ul>
-    {% for key, value in book %}
-    <li> 
-        {% if key == 'title' %}
-        <span>Название:</span>
-        {% endif %}
-        {% if key == 'author' %}
-        <span>Автор:</span>
-        {% endif %}
-        {% if key == 'genre' %}
-        <span>Жанр:</span>
-        {% endif %}
-        {% if key == 'id' %}
-        <span>артикул:</span>
-        {% endif %}
-    {{ value }} </li>
-    {% endfor %}
-</ul>
+<table>
+    <tr>
+      <td>
+          Название:
+      </td>
+      <td>
+          {{ book.title }}
+      </td>
+    </tr>
+    <tr>
+        <td>
+            Автор:
+        </td>
+        <td>
+            {{ book.author }}
+        </td>
+      </tr>
+      <tr>
+        <td>
+            Жанр:
+        </td>
+        <td>
+            {{ book.genre }}
+        </td>
+      </tr>
+      <tr>
+        <td>
+            Артикул:
+        </td>
+        <td>
+            {{ book.id }}
+        </td>
+      </tr>
+</table>
+<div>
+    <a href="{{ url_for('books') }}">Back</a>
+    <a href="{{ url_for('edit', id=book.id) }}">Edit</a>
+</div>
 {% endblock %}
