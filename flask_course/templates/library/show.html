@@ -41,4 +41,11 @@
     <a href="{{ url_for('books') }}">Back</a>
     <a href="{{ url_for('edit', id=book.id) }}">Edit</a>
 </div>
+<form
+	  action="{{ url_for('delete_book', id=book.id) }}"
+	  method="post"
+	  onsubmit="return confirm('Are you sure you want to delete school? This action cannot be undone.');"
+>
+	<input type="submit" value="Remove">
+</form>
 {% endblock %}
