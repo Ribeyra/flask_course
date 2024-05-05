@@ -58,5 +58,11 @@
         "author": "Brothers Grimm",
         "genre": "fairy tale",
         "id": "d698bfa6-311e-4b07-a7be-e787d0207202"
+    },
+    "215b3c8a-8473-4175-81b3-3d3406beb63d": {
+        "title": "\u0412\u043e\u0439\u043d\u0430 \u0438 \u043c\u0438\u0440",
+        "author": "\u041b\u0435\u0432 \u0422\u043e\u043b\u0441\u0442\u043e\u0439",
+        "genre": "\u0420\u043e\u043c\u0430\u043d",
+        "id": "215b3c8a-8473-4175-81b3-3d3406beb63d"
     }
 }

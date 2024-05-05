@@ -1,0 +1,34 @@
+{% extends "library/layout2.html" %}
+
+{% block title %}New Book{% endblock %}
+
+{% block content %}
+{% if messages %}
+  <ul style="list-style-type: none;">
+  {% for category, message in messages %}
+    <li class="{{ category }}">{{ message }}</li>
+  {% endfor %}
+  </ul>
+{% endif %}
+<form action="/login" method="post">
+    <div>
+        <label>
+            email
+            <input type="email" name="email" value="{{ user.email|default('') }}">
+        </label>
+    </div>
+    {% if errors['email'] %}
+    <div>{{ errors['email'] }}</div>
+    {% endif %}
+    <div>
+        <label>
+            password
+            <input type="text" required name="password" value="{{ user.password|default('') }}">
+        </label>
+    </div>
+    {% if errors['password'] %}
+    <div>{{ errors['password'] }}</div>
+    {% endif %}
+    <input type="submit" value="login">
+</form>
+{% endblock %}

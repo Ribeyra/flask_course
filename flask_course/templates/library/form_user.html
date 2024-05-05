@@ -1,0 +1,27 @@
+<div>
+    <label>
+        email
+        <input type="email" name="email" value="{{ user.email|default('') }}" required>
+    </label>
+</div>
+{% if errors['email'] %}
+<div>{{ errors['email'] }}</div>
+{% endif %}
+<div>
+    <label>
+        Имя
+        <input type="text" name="name" value="{{ user.name|default('') }}" required>
+    </label>
+</div>
+{% if errors['name'] %}
+<div>{{ errors['name'] }}</div>
+{% endif %}
+<div>
+    <label>
+        password
+        <input type="text" name="password" value="{{ user.password|default('') }}" required>
+    </label>
+</div>
+{% if errors['password'] %}
+<div>{{ errors['password'] }}</div>
+{% endif %}

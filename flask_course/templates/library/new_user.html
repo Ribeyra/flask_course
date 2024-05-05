@@ -1,10 +1,10 @@
 {% extends "library/layout2.html" %}
 
-{% block title %}New Book{% endblock %}
+{% block title %}New User{% endblock %}
 
 {% block content %}
-<form action="/books" method="post">
-  {% include 'library/form_book.html' %}
+<form action="/users" method="post">
+  {% include 'library/form_user.html' %}
   <input type="submit" value="Confirm">
 </form>
 <div>
