@@ -1,26 +1,20 @@
 <div>
-    <label>
-        Название
-        <input type="text" name="title" value="{{ book.title }}" required>
-    </label>
+    <label class="sr-only">Название</label>
+    <input type="text" name="title" value="{{ book.title }}" required placeholder="Название">
 </div>
 {% if errors['title'] %}
 <div>{{ errors['title'] }}</div>
 {% endif %}
 <div>
-    <label>
-        Автор
-        <input type="text" name="author" value="{{ book.author }}" required>
-    </label>
+    <label class="sr-only">Автор</label>
+    <input type="text" name="author" value="{{ book.author }}" required placeholder="Автор">
 </div>
 {% if errors['author'] %}
 <div>{{ errors['author'] }}</div>
 {% endif %}
 <div>
-    <label>
-        Жанр
-        <input type="text" name="genre" value="{{ book.genre }}" required>
-    </label>
+    <label class="sr-only">Жанр</label>
+    <input type="text" name="genre" value="{{ book.genre }}" required placeholder="Жанр">
 </div>
 {% if errors['genre'] %}
 <div>{{ errors['genre'] }}</div>

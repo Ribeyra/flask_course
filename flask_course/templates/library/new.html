@@ -7,7 +7,5 @@
   {% include 'library/form_book.html' %}
   <input type="submit" value="Confirm">
 </form>
-<div>
-  <a href="{{ url_for('books') }}">Back</a>
-</div>
+{% include 'library/back_block.html' %}
 {% endblock %}

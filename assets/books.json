@@ -5,6 +5,30 @@
         "author": "Carlo Collodi",
         "genre": "fairy tale"
     },
+    "23851847-bf81-4cd3-afa8-70c39bb016d0": {
+        "title": "The Little Prince",
+        "author": "Antoine de Saint-Exup\u00e9ry",
+        "genre": "novella",
+        "id": "23851847-bf81-4cd3-afa8-70c39bb016d0"
+    },
+    "29665c2a-ece3-4142-95eb-112467e424e1": {
+        "title": "The Catcher in the Rye",
+        "author": "J. D. Salinger",
+        "genre": "novel",
+        "id": "29665c2a-ece3-4142-95eb-112467e424e1"
+    },
+    "22c18004-cab0-4bfd-95a8-e784f128770a": {
+        "title": "Don Quixote",
+        "author": "Miguel de Cervantes",
+        "genre": "epic novel",
+        "id": "22c18004-cab0-4bfd-95a8-e784f128770a"
+    },
+    "2a3aa5cd-8a8d-4f49-b2a2-c906d3f71701": {
+        "title": "Fahrenheit 451",
+        "author": "Ray Bradbury",
+        "genre": "dystopian novel",
+        "id": "2a3aa5cd-8a8d-4f49-b2a2-c906d3f71701"
+    },
     "1572c85e-e805-40a4-922b-0d498ffa12df": {
         "title": "\u0417\u043e\u043b\u043e\u0442\u043e\u0439 \u043a\u043b\u044e\u0447\u0438\u043a",
         "author": "\u0410. \u0422\u043e\u043b\u0441\u0442\u043e\u0439",

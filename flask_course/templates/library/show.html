@@ -4,43 +4,33 @@
 
 {% block content %}
 <table>
+    {% for key, value in book.items() %}
+        {% if key != 'id' %}
+            <tr>
+                <td>
+                    {% if key == 'title' %}
+                        Название:
+                    {% elif key == 'author' %}
+                        Автор:
+                    {% elif key == 'genre' %}
+                        Жанр:
+                    {% endif %}
+                </td>
+                <td>
+                    {{ value }}
+                </td>
+            </tr>
+        {% endif %}
+    {% endfor %}
     <tr>
-      <td>
-          Название:
-      </td>
-      <td>
-          {{ book.title }}
-      </td>
-    </tr>
-    <tr>
-        <td>
-            Автор:
-        </td>
-        <td>
-            {{ book.author }}
-        </td>
-      </tr>
-      <tr>
-        <td>
-            Жанр:
-        </td>
-        <td>
-            {{ book.genre }}
-        </td>
-      </tr>
-      <tr>
         <td>
             Артикул:
         </td>
         <td>
             {{ book.id }}
         </td>
-      </tr>
+    </tr>
 </table>
-<div>
-    <a href="{{ url_for('books') }}">Back</a>
-    <a href="{{ url_for('edit', id=book.id) }}">Edit</a>
-</div>
 <form
 	  action="{{ url_for('delete_book', id=book.id) }}"
 	  method="post"
@@ -48,4 +38,9 @@
 >
 	<input type="submit" value="Remove">
 </form>
+<div>
+    <br>
+    <a href="{{ url_for('books') }}">Back</a>
+    <a href="{{ url_for('edit', id=book.id) }}">Edit</a>
+</div>
 {% endblock %}
