@@ -309,3 +309,7 @@ def new_user():
         user=user,
         errors=errors
     )
+
+
+if __name__ == '__main__':
+    app.run(port=5000)
